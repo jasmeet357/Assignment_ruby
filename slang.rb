@@ -1,13 +1,11 @@
 class Sample
     def initialize(slang)
       @s = slang
-      if (slang.is_a? String)
-        if @s.include? "shit"
-          p "No slangs allowed"
-        end
+      if ((@s.is_a? String) && (@s.include? "shit"))
+        p "No slangs allowed"
       else
         p "The given input is not a string"
       end
     end
 end
-Sample.new("bullshit")
+Sample.new("dogshit")
