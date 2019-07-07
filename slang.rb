@@ -2,7 +2,7 @@ class Sample
     def initialize(slang)
       @s = slang
       if (slang.is_a? String)
-        if(@s == "bullshit" || @s == "shit" || @s == "fuck")
+        if @s.include? "shit"
           p "No slangs allowed"
         end
       else
