@@ -4,11 +4,13 @@ class NoSlangAllowed
     end
     def Sample
         if ((@s.is_a? String) && (@s.include? "shit"))
-            raise ArgumentError.new("NoSlangAllowed")
+            raise ArgumentError.new("No Slang Allowed")
+          elsif(@s.is_a? String)
+            p @s
           else
-            p "The given input is not a string"
+            raise ArgumentError.new("The given input is not a string") 
           end
     end
   end
-  NoSlangAllowed.new("Bullshit")
+  NoSlangAllowed.new("dogshit").Sample
     
