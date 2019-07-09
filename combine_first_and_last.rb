@@ -1,11 +1,17 @@
-def combine_first_and_last
+def combine_first_and_last(key_value_pairs)
 
-    key_value_pairs = { a: "s", c: 5, x: "g" }
-    
+    keys = key_value_pairs.keys
+    values  = key_value_pairs.values
+    new_key = keys.first.to_s << keys.last.to_s
     a = key_value_pairs.values.first
     b = key_value_pairs.values.to_a.last
-    p a+b
-  
+    new_value = a + b
+    key_value_pairs.delete(keys.first)
+    key_value_pairs.delete(keys.last)
+    new_keys = {new_key => new_value}.merge(key_value_pairs)
+    # key_value_pairs.keys
 end
-p combine_first_and_last
+puts combine_first_and_last({ a: [1], c: 5, x: [2] })
+p combine_first_and_last({ a: 's', c: 5, x: 'g' })
+puts combine_first_and_last({ a: 2, c: 5, x: 3 })
   
